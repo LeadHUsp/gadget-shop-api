@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "articles",
+  "info": {
+    "name": "articles "
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "annotation": {
+      "type": "text"
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

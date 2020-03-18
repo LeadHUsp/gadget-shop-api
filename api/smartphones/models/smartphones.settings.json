@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "smartphones",
+  "info": {
+    "name": "smartphones"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "case_material": {
+      "type": "string"
+    },
+    "protect": {
+      "type": "enumeration",
+      "enum": [
+        "null",
+        "IP67",
+        "IP68"
+      ]
+    },
+    "color": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "display_size": {
+      "type": "decimal"
+    },
+    "quick_charge": {
+      "type": "boolean",
+      "default": false
+    },
+    "display_type": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
+    },
+    "internal_memory": {
+      "type": "biginteger"
+    },
+    "display_resolution": {
+      "type": "string"
+    },
+    "RAM": {
+      "type": "biginteger"
+    },
+    "card_image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
