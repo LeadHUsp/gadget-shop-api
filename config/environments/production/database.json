@@ -4,7 +4,7 @@
     "default": {
       "connector": "mongoose",
       "settings": {
-        "uri": "${process.env.DATABASE_URI}",
+        "uri": "mongodb+srv://root_local:root@cluster0-m9iu0.mongodb.net/test?retryWrites=true&w=majority",
         "database": "${process.env.DATABASE_NAME}"
       },
       "options": {
