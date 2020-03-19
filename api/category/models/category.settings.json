@@ -19,10 +19,7 @@
       "required": true
     },
     "main_image": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
+      "type": "string"
     }
   }
 }
