@@ -56,16 +56,10 @@
       "type": "biginteger"
     },
     "card_image": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
+      "type": "string"
     },
     "photos": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
+      "type": "string"
     }
   }
 }
