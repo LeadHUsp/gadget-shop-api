@@ -1,9 +1,16 @@
 {
-  "routes": [
-    {
+  "routes": [{
       "method": "GET",
       "path": "/smartphones",
       "handler": "smartphones.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/smartphones/filter",
+      "handler": "smartphones.filter",
       "config": {
         "policies": []
       }
