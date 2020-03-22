@@ -11,14 +11,17 @@ module.exports = {
     let perPage = ctx.query._limit || 3;
     let currentPage = ctx.query.page || 1;
     ctx.query._limit = perPage * ctx.query.page;
+    delete ctx.query._limit;
     if (ctx.query.page) {
       delete ctx.query.page;
-      delete ctx.query.limit;
+      delete ctx.query._limit;
     }
+
     if (ctx.query._q) {
       entities = await strapi.services.smartphones.search(ctx.query);
     } else {
-      entities = await strapi.services.smartphones.find(ctx.query.params);
+      /* console.log(ctx.query); */
+      entities = await strapi.services.smartphones.find(ctx.query);
     }
 
     let res = entities.map(entity => {
@@ -41,33 +44,46 @@ module.exports = {
     }
   },
   async filter() {
-    let filter_values = {
-      display_sizes: [],
-      series: [],
-      memory_models: [],
-      brands: []
-    };
+    let filter_values = [
+      {
+        title: "Размер экрана",
+        key: "display_size",
+        values: []
+      },
+      {
+        title: "Серия",
+        key: "series",
+        values: []
+      },
+      {
+        title: "Объем внутреннего накопителя",
+        key: "internal_memory",
+        values: []
+      },
+      {
+        title: "Бренд",
+        key: "brand",
+        values: []
+      }
+    ];
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
     }
     let entities = await strapi.services.smartphones.find();
 
-    let res = entities.map(entity => {
-      return sanitizeEntity(entity, { model: strapi.models.smartphones });
-    });
-    res.map(item => {
-      filter_values.display_sizes.push(item.display_size);
-      filter_values.series.push(item.series);
-      filter_values.memory_models.push(item.internal_memory);
-      filter_values.brands.push(item.brand);
+    entities.map(item => {
+      filter_values[0].values.push(item.display_size);
+      filter_values[1].values.push(item.series);
+      filter_values[2].values.push(item.internal_memory);
+      filter_values[3].values.push(item.brand);
       return filter_values;
     });
-    let filter = {
-      display_sizes: filter_values.display_sizes.filter(onlyUnique),
-      series: filter_values.series.filter(onlyUnique),
-      memory_models: filter_values.memory_models.filter(onlyUnique),
-      brands: filter_values.brands.filter(onlyUnique)
-    };
-    return filter;
+
+    for (let i = 0; i < filter_values.length; i++) {
+      filter_values[i].values = filter_values[i].values.filter(onlyUnique);
+      /*  console.log(filter_values[i].values); */
+    }
+
+    return filter_values;
   }
 };

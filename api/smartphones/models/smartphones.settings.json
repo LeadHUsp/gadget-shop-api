@@ -59,7 +59,7 @@
       "type": "string"
     },
     "internal_memory": {
-      "type": "string"
+      "type": "decimal"
     }
   }
 }
