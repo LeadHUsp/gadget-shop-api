@@ -47,22 +47,22 @@ module.exports = {
     let filter_values = [
       {
         title: "Размер экрана",
-        key: "display_size",
+        param: "display_size",
         values: []
       },
       {
         title: "Серия",
-        key: "series",
+        param: "series",
         values: []
       },
       {
         title: "Объем внутреннего накопителя",
-        key: "internal_memory",
+        param: "internal_memory",
         values: []
       },
       {
         title: "Бренд",
-        key: "brand",
+        param: "brand",
         values: []
       }
     ];
