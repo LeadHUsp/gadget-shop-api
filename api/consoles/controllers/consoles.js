@@ -4,6 +4,7 @@
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
  * to customize this controller
  */
+
 const { sanitizeEntity } = require("strapi-utils");
 module.exports = {
   async find(ctx) {
@@ -18,14 +19,14 @@ module.exports = {
     }
 
     if (ctx.query._q) {
-      entities = await strapi.services.smartphones.search(ctx.query);
+      entities = await strapi.services.consoles.search(ctx.query);
     } else {
       /* console.log(ctx.query); */
-      entities = await strapi.services.smartphones.find(ctx.query);
+      entities = await strapi.services.consoles.find(ctx.query);
     }
 
     let res = entities.map((entity) => {
-      return sanitizeEntity(entity, { model: strapi.models.smartphones });
+      return sanitizeEntity(entity, { model: strapi.models.consoles });
     });
 
     let total = res.length;
@@ -46,11 +47,6 @@ module.exports = {
   async filter() {
     let filter_values = [
       {
-        title: "Размер экрана",
-        param: "display_size",
-        values: [],
-      },
-      {
         title: "Серия",
         param: "series",
         values: [],
@@ -60,22 +56,16 @@ module.exports = {
         param: "internal_memory",
         values: [],
       },
-      {
-        title: "Бренд",
-        param: "brand",
-        values: [],
-      },
     ];
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
     }
-    let entities = await strapi.services.smartphones.find();
+    let entities = await strapi.services.consoles.find();
 
     entities.map((item) => {
-      filter_values[0].values.push(item.display_size);
-      filter_values[1].values.push(item.series);
-      filter_values[2].values.push(item.internal_memory);
-      filter_values[3].values.push(item.brand);
+      filter_values[0].values.push(item.series);
+      filter_values[1].values.push(item.internal_memory);
+
       return filter_values;
     });
 

@@ -60,6 +60,9 @@
     },
     "internal_memory": {
       "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

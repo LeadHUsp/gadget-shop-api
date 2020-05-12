@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "consoles",
+  "info": {
+    "name": "consoles"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
+    },
+    "card_image": {
+      "type": "string"
+    },
+    "photos": {
+      "type": "string"
+    },
+    "internal_memory": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
