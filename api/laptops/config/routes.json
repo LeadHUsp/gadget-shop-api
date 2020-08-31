@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/laptops",
+      "handler": "laptops.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/laptops/count",
+      "handler": "laptops.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/laptops/:id",
+      "handler": "laptops.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/laptops",
+      "handler": "laptops.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/laptops/:id",
+      "handler": "laptops.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/laptops/:id",
+      "handler": "laptops.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

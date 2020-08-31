@@ -1,0 +1,59 @@
+{
+  "routes": [{
+      "method": "GET",
+      "path": "/graphicscards",
+      "handler": "graphicscard.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/graphicscards/filter",
+      "handler": "graphicscard.filter",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/graphicscards/count",
+      "handler": "graphicscard.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/graphicscards/:id",
+      "handler": "graphicscard.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/graphicscards",
+      "handler": "graphicscard.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/graphicscards/:id",
+      "handler": "graphicscard.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/graphicscards/:id",
+      "handler": "graphicscard.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

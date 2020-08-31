@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "graphicscards",
+  "info": {
+    "name": "graphicscard"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "card_image": {
+      "type": "string"
+    },
+    "photos": {
+      "type": "string"
+    },
+    "internal_memory": {
+      "type": "decimal"
+    },
+    "series": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

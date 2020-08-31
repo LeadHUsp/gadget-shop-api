@@ -1,0 +1,14 @@
+{
+  "connection": "default",
+  "collectionName": "components_smartphones_tech_chars",
+  "info": {
+    "name": "Tech_char",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "display_size": {
+      "type": "string"
+    }
+  }
+}

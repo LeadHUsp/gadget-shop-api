@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "laptops",
+  "info": {
+    "name": "laptops"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "card_image": {
+      "type": "string"
+    },
+    "photos": {
+      "type": "string"
+    },
+    "display_size": {
+      "type": "string"
+    },
+    "processor_series": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "resolution": {
+      "type": "string"
+    },
+    "smart": {
+      "type": "component",
+      "repeatable": false,
+      "component": "smartphones.tech-char"
+    }
+  }
+}
