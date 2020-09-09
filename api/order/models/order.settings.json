@@ -10,18 +10,6 @@
     "timestamps": true
   },
   "attributes": {
-    "product_id": {
-      "type": "string"
-    },
-    "product_name": {
-      "type": "string"
-    },
-    "product_price": {
-      "type": "string"
-    },
-    "product_count": {
-      "type": "string"
-    },
     "firstName": {
       "type": "string"
     },
@@ -36,6 +24,9 @@
     },
     "phone": {
       "type": "string"
+    },
+    "products": {
+      "type": "json"
     }
   }
 }

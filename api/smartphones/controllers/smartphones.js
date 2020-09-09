@@ -5,6 +5,7 @@
  * to customize this controller
  */
 const { sanitizeEntity } = require("strapi-utils");
+
 module.exports = {
   async find(ctx) {
     let entities;
