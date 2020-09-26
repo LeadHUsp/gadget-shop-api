@@ -1,9 +1,16 @@
 {
-  "routes": [
-    {
+  "routes": [{
       "method": "GET",
       "path": "/laptops",
       "handler": "laptops.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/laptops/filter",
+      "handler": "laptops.filter",
       "config": {
         "policies": []
       }
