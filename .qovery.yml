@@ -1,0 +1,11 @@
+---
+application:
+  name: "gadget-shop-api"
+  project: "gadget-shop-api"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-gadget-shop-api"
+  routes:
+  - application_name: "gadget-shop-api"
+    paths:
+    - "/*"
